@@ -12,6 +12,9 @@ set -U EDITOR vim
 set RUBY_GC_MALLOC_LIMIT 60000000
 set RUBY_FREE_MIN 200000
 
+# hack to load rvm custom with fish
+rvm > /dev/null
+
 #aliases
 alias rake='bundle exec rake'
 alias spec='bundle exec spec'
