@@ -1,9 +1,11 @@
 set fish_greeting ""
 
-# Load path
-set -x PATH /usr/local/bin $PATH
-set -x PATH /usr/local/heroku/bin $PATH
-set -x PATH /usr/local/share/npm/bin $PATH
+### PATH ###
+set default_path /usr/bin /usr/sbin /bin /sbin
+set homebrew /usr/local/bin /usr/local/sbin
+set heroku /usr/local/heroku/bin
+set npm /usr/local/share/npm/bin
+set -gx PATH $homebrew $heroku $npm $default_path
 
 # Default editor
 set -U EDITOR vim
