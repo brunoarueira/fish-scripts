@@ -5,13 +5,11 @@ set default_path /usr/bin /usr/sbin /bin /sbin
 set homebrew /usr/local/bin /usr/local/sbin
 set heroku /usr/local/heroku/bin
 set npm /usr/local/share/npm/bin
-set brew_rbenv "/usr/local/var/rbenv/shims"
+set brew_rbenv "~/.rbenv/shims"
 set -gx PATH $homebrew $heroku $npm $brew_rbenv $default_path
 
 ### Ruby (rbenv) ###
-set -gx RBENV_ROOT /usr/local/var/rbenv
-
-rbenv rehash >/dev/null ^&1
+. (rbenv init -)
 
 # Default editor
 set -U EDITOR vim
