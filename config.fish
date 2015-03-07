@@ -19,6 +19,9 @@ set rbenv_shims $HOME/.rbenv/shims
 set default_path /usr/bin /usr/sbin /bin /sbin
 set -gx PATH $postgresapp $homebrew $heroku $npm $rbenv_bin $rbenv_shims $default_path
 
+### Go ###
+set -gx GOPATH /Users/bruno_arueira/trabalho/workspace/go
+
 ### Ruby (rbenv) ###
 rbenv rehash >/dev/null ^&1
 
