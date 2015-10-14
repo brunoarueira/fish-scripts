@@ -15,6 +15,9 @@ set -q PG_VERSION; or set PG_VERSION (choose_pg_version)
 # Sets java home
 set JAVA_HOME "/System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands"
 
+# Android
+set -gx ANDROID_HOME /usr/local/opt/android-sdk
+
 ### PATH ###
 set postgresapp $postgresapp_base_path/$PG_VERSION/bin
 set homebrew /usr/local/bin /usr/local/sbin
