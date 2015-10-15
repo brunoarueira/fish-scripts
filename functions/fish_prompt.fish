@@ -14,7 +14,7 @@ function __git_dirty_color
 end
 
 function __parse_git_branch -d "Parse current Git branch name"
-  set -l branch (git symbolic-ref HEAD | sed -e "s/^refs\/heads\///")
+  set -l branch (git branch 2>/dev/null | grep -e '^*' | sed -E 's/^\* (.+)$/(\1) /')
 
   echo (__git_dirty_color) $branch
 end
