@@ -40,8 +40,11 @@ status --is-interactive; and . (rbenv init -|psub)
 set -U EDITOR vim
 
 # Ruby env vars
-set RUBY_GC_MALLOC_LIMIT 60000000
-set RUBY_GC_HEAP_FREE_SLOTS 200000
+set RUBY_GC_MALLOC_LIMIT 4000100
+set RUBY_GC_MALLOC_LIMIT_MAX 16000100
+set RUBY_GC_HEAP_GROWTH_FACTOR 1.1
+set RUBY_GC_OLDMALLOC_LIMIT 16000100
+set RUBY_GC_OLDMALLOC_LIMIT_MAX 16000100
 
 #aliases
 alias rake='bundle exec rake'
