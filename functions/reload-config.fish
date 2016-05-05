@@ -1,3 +1,3 @@
 function reload-config
-  . ~/trabalho/workspace/others/fish-scripts/config.fish
+  . ~/.config/fish/config.fish
 end
