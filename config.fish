@@ -1,7 +1,7 @@
 set fish_greeting ""
 
 ### Go ###
-set -gx GOPATH /Users/bruno_arueira/trabalho/workspace/go
+set -gx GOPATH /Users/bruno_arueira/trabalho/go
 
 # Choose the last version postgres installed by Postgres.app
 set postgresapp_base_path /Applications/Postgres.app/Contents/Versions
