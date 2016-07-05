@@ -7,3 +7,10 @@ alias brails='bundle exec rails'
 # Others
 alias clear_drive='rm -rf .fseventsd ._.Trashes .Trashes .Spotlight-V100'
 alias top="top -o cpu"
+
+# Recursively delete `.DS_Store` files
+alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
+
+# Show/hide hidden files in Finder
+alias show="defaults write com.apple.Finder AppleShowAllFiles -bool true and killall Finder"
+alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool false and killall Finder"
