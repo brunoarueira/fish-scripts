@@ -51,11 +51,6 @@ set RUBY_GC_HEAP_GROWTH_FACTOR 1.1
 set RUBY_GC_OLDMALLOC_LIMIT 16000100
 set RUBY_GC_OLDMALLOC_LIMIT_MAX 16000100
 
-#aliases
-alias rake='bundle exec rake'
-alias spec='bundle exec spec'
-alias rspec='bundle exec rspec'
-alias brails='bundle exec rails'
-alias clear_drive='rm -rf .fseventsd ._.Trashes .Trashes .Spotlight-V100'
+. "$HOME/.config/fish/functions/aliases.fish"
 
 stty echo
