@@ -1,10 +1,10 @@
 function man
-  set -lx LESS_TERMCAP_mb (printf "\e[1;35m");
-  set -lx LESS_TERMCAP_md (printf "\e[1;35m");
-  set -lx LESS_TERMCAP_me (printf "\e[0m");
-  set -lx LESS_TERMCAP_se (printf "\e[0m");
-  set -lx LESS_TERMCAP_so (printf "\e[1;44;33m");
-  set -lx LESS_TERMCAP_ue (printf "\e[0m");
-  set -lx LESS_TERMCAP_us (printf "\e[1;32m");
+  setenv -x LESS_TERMCAP_mb (set_color -o red)
+  setenv -x LESS_TERMCAP_md (set_color -o red)
+  setenv -x LESS_TERMCAP_me (set_color normal)
+  setenv -x LESS_TERMCAP_se (set_color normal)
+  setenv -x LESS_TERMCAP_so (set_color -b blue -o yellow)
+  setenv -x LESS_TERMCAP_ue (set_color normal)
+  setenv -x LESS_TERMCAP_us (set_color -o green)
   command man $argv;
 end
