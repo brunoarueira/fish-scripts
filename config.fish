@@ -1,4 +1,9 @@
+stty -echo
+
 set fish_greeting ""
+
+set -gx LC_TIME 'pt_BR.UTF-8'
+set -gx LC_MESSAGES 'en_US.UTF-8'
 
 ### Go ###
 set -gx GOPATH /Users/bruno_arueira/trabalho/go
@@ -52,3 +57,5 @@ alias spec='bundle exec spec'
 alias rspec='bundle exec rspec'
 alias brails='bundle exec rails'
 alias clear_drive='rm -rf .fseventsd ._.Trashes .Trashes .Spotlight-V100'
+
+stty echo
