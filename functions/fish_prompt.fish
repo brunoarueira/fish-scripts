@@ -14,9 +14,14 @@ function __git_dirty_color
 end
 
 function __parse_git_branch -d "Parse current Git branch name"
-  set -l branch (git branch 2>/dev/null | grep -e '^*' | sed -E 's/^\* (.+)$/(\1) /')
+  set -l branch (git symbolic-ref HEAD ^ /dev/null | sed -e 's|^refs/heads/||')
+  set -l revision (git rev-parse HEAD ^ /dev/null | cut -b 1-7)
 
-  echo (__git_dirty_color) $branch
+  if test (count $branch) -gt 0
+    echo (__git_dirty_color) $branch
+  else
+    echo (__git_dirty_color) $revision
+  end
 end
 
 function __format_time -d "Format milliseconds to a human readable format"
@@ -48,20 +53,24 @@ function __format_time -d "Format milliseconds to a human readable format"
 end
 
 function __get_ruby_version
-  echo (ruby --version | cut -d' ' -f2)
+  set -l ruby_version (ruby --version ^ /dev/null | cut -d' ' -f2)
+
+  if test (count $ruby_version) -gt 0
+    echo $ruby_version
+  else
+    echo "(ruby version not installed)"
+  end
 end
 
 function fish_prompt
   set -l exit_code $status
 
   # Symbols
-
   set -l symbol_prompt "❯"
   set -l symbol_git_down_arrow "⇣"
   set -l symbol_git_up_arrow "⇡"
 
   # Colors
-
   set -l color_blue (set_color blue)
   set -l color_green (set_color green)
   set -l color_normal (set_color normal)
@@ -70,15 +79,13 @@ function fish_prompt
   set -l color_yellow (set_color yellow)
 
   # Template
-
   set -l current_folder (__parse_current_folder)
   set -l command_duration ""
   set -l prompt ""
-  set -l git_arrows ""
-  set -l whoami (whoami)
+  set -l git_arrows
 
   # Format current folder on prompt output
-  set prompt $prompt "\n$color_green$whoami $color_blue$current_folder$color_normal "
+  set prompt $prompt "\n$color_green $color_blue$current_folder$color_normal "
 
   # Handle previous command exit code
   if test $exit_code -ne 0
@@ -133,8 +140,6 @@ function fish_prompt
   set prompt $prompt "\n$color_symbol$symbol_prompt$color_normal "
 
   echo -e -s $prompt
-
-  # printf '%s%s %s %s%s %s%s$ ' ($color_green) (whoami) ($color_purple) (__get_ruby_version) (__parse_git_branch) ($color_normal)
 end
 
 # Set title to current folder and shell name
