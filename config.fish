@@ -52,5 +52,6 @@ set RUBY_GC_OLDMALLOC_LIMIT 16000100
 set RUBY_GC_OLDMALLOC_LIMIT_MAX 16000100
 
 . "$HOME/.config/fish/functions/aliases.fish"
+. "$HOME/.config/fish/functions/utils.fish"
 
 stty echo
