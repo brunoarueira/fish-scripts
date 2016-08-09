@@ -19,6 +19,7 @@ My personal fish scripts to use with [fish shell](http://fishshell.com/)
 |```reload-config```   |               |Reload the fish config|
 |```screenshot```      |rspec file     |set the SCREENSHOT variable with true to execute the rspec test to take a screenshot when fail|
 |```toggle```          |process name   |toggle the visibility of an application on OS X|
+|```unset```           |variable       |unset/erase the variable|
 
 ## Contributing
 
