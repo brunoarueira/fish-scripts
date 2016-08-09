@@ -1,3 +1,3 @@
-function screenshot
-  env SCREENSHOT=true $argv
+function screenshot --argument-names command
+  env SCREENSHOT=true $command
 end

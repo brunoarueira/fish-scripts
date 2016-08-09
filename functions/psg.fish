@@ -1,3 +1,3 @@
-function psg
-  ps axu | grep $argv | grep -v grep
+function psg --argument-names process
+  ps axu | grep $process | grep -v grep
 end

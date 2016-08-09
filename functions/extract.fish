@@ -1,32 +1,32 @@
-function extract
-  if set -q argv
-    if test -f $argv
-      switch $argv
+function extract --argument-names file
+  if set -q file
+    if test -f $file
+      switch $file
         case *.tar.bz2
-          tar -jxvf $argv
+          tar -jxvf $file
         case *.tar.gz
-          tar -zxvf $argv
+          tar -zxvf $file
         case *.bz2
-          bunzip2 $argv
+          bunzip2 $file
         case *.dmg
-          hdiutil mount $argv
+          hdiutil mount $file
         case *.gz
-          gunzip $argv
+          gunzip $file
         case *.tar
-          tar -xvf $argv
+          tar -xvf $file
         case *.tbz2
-          tar -jxvf $argv
+          tar -jxvf $file
         case *.tgz
-          tar -zxvf $argv
+          tar -zxvf $file
         case *.zip
-          unzip $argv
+          unzip $file
         case *.Z
-          uncompress $argv
+          uncompress $file
         case '*'
-          echo "'$argv' cannot be extracted/mounted via extract"
+          echo "'$file' cannot be extracted/mounted via extract"
       end
     else
-      echo "'$argv' is not a valid file"
+      echo "'$file' is not a valid file"
     end
   end
 end
