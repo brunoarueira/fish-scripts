@@ -59,4 +59,7 @@ set -gx GPG_TTY (tty)
 . "$HOME/.config/fish/functions/aliases.fish"
 . "$HOME/.config/fish/functions/utils.fish"
 
+# Direnv
+eval (direnv hook fish)
+
 stty echo
