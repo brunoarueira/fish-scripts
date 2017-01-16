@@ -56,6 +56,12 @@ end
 set -gx GPG_AGENT_INFO (cut -c 16- ~/.gpg-agent-info)
 set -gx GPG_TTY (tty)
 
+# docker/dinghy
+set -gx DOCKER_HOST tcp://192.168.64.3:2376
+set -gx DOCKER_CERT_PATH ~/.docker/machine/machines/dinghy
+set -gx DOCKER_TLS_VERIFY 1
+set -gx DOCKER_MACHINE_NAME dinghy
+
 . "$HOME/.config/fish/functions/aliases.fish"
 . "$HOME/.config/fish/functions/utils.fish"
 
