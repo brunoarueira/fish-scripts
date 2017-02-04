@@ -116,7 +116,7 @@ function fish_prompt
     set -l has_upstream (command git rev-parse --abbrev-ref @'{u}' ^/dev/null)
 
     if test -n "$has_upstream"
-      set -l git_status (command git rev-list --left-right --count HEAD...@'{u}' | sed 's/[[:blank:]]/ /' ^/dev/null)
+      set -l git_status (command git rev-list --left-right --count HEAD...@'{u}' | sed 's/[[:blank:]]//' ^/dev/null)
 
       # Resolve Git arrows by treating `git_status` as an array
       set -l git_arrow_left (command echo $git_status | cut -c 1 ^/dev/null)
