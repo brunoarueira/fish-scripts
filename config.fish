@@ -12,7 +12,7 @@ set -gx GOPATH /Users/bruno_arueira/trabalho/go
 set JAVA_HOME "/System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands"
 
 # Android
-set -gx ANDROID_HOME /usr/local/opt/android-sdk
+set -gx ANDROID_HOME ~/Library/Android/sdk
 
 ### PATH ###
 set homebrew /usr/local/bin /usr/local/sbin
