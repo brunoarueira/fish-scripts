@@ -6,7 +6,7 @@ set -gx LC_TIME 'pt_BR.UTF-8'
 set -gx LC_MESSAGES 'en_US.UTF-8'
 
 ### Go ###
-set -gx GOPATH /Users/bruno_arueira/trabalho/go
+set -gx GOPATH ~/trabalho/go
 
 # Sets java home
 set JAVA_HOME "/System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands"
