@@ -16,7 +16,6 @@ set -gx ANDROID_HOME ~/Library/Android/sdk
 
 ### PATH ###
 set homebrew /usr/local/bin /usr/local/sbin
-set heroku /usr/local/heroku/bin
 set npm /usr/local/share/npm/bin
 set node_modules /usr/local/lib/node_modules
 set rbenv_bin $HOME/.rbenv/bin
@@ -26,7 +25,7 @@ set default_path /usr/bin /usr/sbin /bin /sbin
 set android_tools $ANDROID_HOME/tools
 set android_platform_tools $ANDROID_HOME/platform-tools
 set qt /usr/local/opt/qt@5.5/bin
-set -gx PATH $homebrew $heroku $npm $node_modules $rbenv_bin $rbenv_shims $gopathbin $android_tools $android_platform_tools $qt $default_path
+set -gx PATH $homebrew $npm $node_modules $rbenv_bin $rbenv_shims $gopathbin $android_tools $android_platform_tools $qt $default_path
 
 ### Ruby (rbenv) ###
 rbenv rehash >/dev/null ^&1
