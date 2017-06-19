@@ -23,7 +23,10 @@ set rbenv_bin $HOME/.rbenv/bin
 set rbenv_shims $HOME/.rbenv/shims
 set gopathbin $GOPATH/bin
 set default_path /usr/bin /usr/sbin /bin /sbin
-set -gx PATH $homebrew $heroku $npm $node_modules $rbenv_bin $rbenv_shims $gopathbin $default_path
+set android_tools $ANDROID_HOME/tools
+set android_platform_tools $ANDROID_HOME/platform-tools
+set qt /usr/local/opt/qt@5.5/bin
+set -gx PATH $homebrew $heroku $npm $node_modules $rbenv_bin $rbenv_shims $gopathbin $android_tools $android_platform_tools $qt $default_path
 
 ### Ruby (rbenv) ###
 rbenv rehash >/dev/null ^&1
