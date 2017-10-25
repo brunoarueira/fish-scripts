@@ -64,6 +64,9 @@ set -gx DOCKER_CERT_PATH ~/.docker/machine/machines/dinghy
 set -gx DOCKER_TLS_VERIFY 1
 set -gx DOCKER_MACHINE_NAME dinghy
 
+# fzf
+set -gx FZF_DEFAULT_COMMAND 'ag -g ""'
+
 . "$HOME/.config/fish/functions/aliases.fish"
 . "$HOME/.config/fish/functions/utils.fish"
 
