@@ -34,7 +34,7 @@ rbenv rehash >/dev/null ^&1
 status --is-interactive; and . (rbenv init -|psub)
 
 # Default editor
-set -U EDITOR vim
+set -U EDITOR nvim
 
 # Ruby env vars
 set RUBY_GC_MALLOC_LIMIT 4000100
