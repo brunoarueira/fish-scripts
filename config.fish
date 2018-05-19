@@ -12,7 +12,9 @@ set -gx GOPATH ~/trabalho/go
 set JAVA_HOME "/System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands"
 
 # Android
-set -gx ANDROID_HOME ~/Library/Android/sdk
+set -gx ANDROID_HOME /usr/local/share/android-sdk
+set -gx ANDROID_SDK_HOME /usr/local/share/android-sdk
+set -gx ANDROID_NDK_HOME /usr/local/share/android-ndk
 
 ### PATH ###
 set homebrew /usr/local/bin /usr/local/sbin
@@ -22,10 +24,12 @@ set rbenv_bin $HOME/.rbenv/bin
 set rbenv_shims $HOME/.rbenv/shims
 set gopathbin $GOPATH/bin
 set default_path /usr/bin /usr/sbin /bin /sbin
+set android_emulator $ANDROID_HOME/emulator
 set android_tools $ANDROID_HOME/tools
 set android_platform_tools $ANDROID_HOME/platform-tools
 set qt /usr/local/opt/qt@5.5/bin
-set -gx PATH $homebrew $npm $node_modules $rbenv_bin $rbenv_shims $gopathbin $android_tools $android_platform_tools $qt $default_path
+set fastlane $HOME/.fastlane/bin
+set -gx PATH $homebrew $npm $node_modules $rbenv_bin $rbenv_shims $gopathbin $android_emulator $android_tools $android_platform_tools $fastlane $qt $default_path
 
 ### Ruby (rbenv) ###
 rbenv rehash >/dev/null ^&1
@@ -69,6 +73,14 @@ set -gx FZF_DEFAULT_COMMAND 'ag -g ""'
 
 . "$HOME/.config/fish/functions/aliases.fish"
 . "$HOME/.config/fish/functions/utils.fish"
+
+### NVM ###
+set -gx NVM_DIR /usr/local/opt/nvm
+
+bass source $NVM_DIR/nvm.sh --no-use
+
+set -gx LC_ALL en_US.UTF-8
+set -gx LANG en_US.UTF-8
 
 # Direnv
 eval (direnv hook fish)
