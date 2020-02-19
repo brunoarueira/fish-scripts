@@ -14,3 +14,7 @@ alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.Finder AppleShowAllFiles -bool true and killall Finder"
 alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool false and killall Finder"
+
+alias dk="docker kill (docker ps -q -a)"
+alias dcr="docker-compose run"
+alias dvr="docker volume rm"
