@@ -28,7 +28,7 @@ if test $current_os = "Linux"
 else
   set linuxbrew ''
 
-  set -gx PKG_CONFIG_PATH /usr/local/lib/pkgconfig
+  set -gx PKG_CONFIG_PATH /usr/local/opt/libpq/lib/pkgconfig,/usr/local/lib/pkgconfig
 end
 
 ### PATH ###
@@ -45,7 +45,8 @@ set android_tools $ANDROID_HOME/tools
 set fastlane $HOME/.fastlane/bin
 set NVM_DIR $HOME/.nvm
 set qt $HOME/Qt5.5.0/5.5/clang_64/bin
-set -gx PATH $homebrew $qt $default_path $node_modules $rbenv_bin $rbenv_shims $android_emulator $android_tools $android_platform_tools $fastlane $cargo_env $cargo_bin $linuxbrew
+set libpq /usr/local/opt/libpq/bin
+set -gx PATH $homebrew $qt $libpq $default_path $node_modules $rbenv_bin $rbenv_shims $android_emulator $android_tools $android_platform_tools $fastlane $cargo_env $cargo_bin $linuxbrew
 
 ### Ruby (rbenv) ###
 rbenv rehash >/dev/null 2>&1
