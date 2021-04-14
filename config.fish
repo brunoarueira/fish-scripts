@@ -7,8 +7,10 @@ set -gx LC_MESSAGES 'en_US.UTF-8'
 set -gx LC_ALL en_US.UTF-8
 set -gx LANG en_US.UTF-8
 
+set -x current_os (uname -s)
+
 # Android
-if (uname) == Linux
+if test $current_os = "Linux"
   set -gx ANDROID_HOME /usr/lib/android-sdk
 else
   set -gx ANDROID_HOME ~/Library/Android/sdk
@@ -19,7 +21,7 @@ end
 # Sets java home
 set JAVA_HOME "/System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands"
 
-if (uname) == Linux
+if test $current_os = "Linux"
   set linuxbrew /home/linuxbrew/.linuxbrew/bin /home/linuxbrew/.linuxbrew/sbin
 
   set -gx PKG_CONFIG_PATH /usr/share/pkgconfig,/usr/lib/pkgconfig,/usr/lib/x86_64-linux-gnu/pkgconfig
