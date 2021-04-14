@@ -1,5 +1,5 @@
 function __parse_current_folder -d "Replace '/Users/$USER' by '~'"
-  pwd | sed "s/^\/home\/$USER/~/"
+  pwd | sed "s/^\/Users\/$USER/~/"
 end
 
 function __git_dirty_color
