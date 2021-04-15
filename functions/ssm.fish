@@ -13,6 +13,6 @@ function ssm --argument-names profile -d 'Connect through aws ssm to instances o
   set instance (__list_instances | fzf | cut -f 1)
 
   if test -n "$instance"
-    aws ssm start-session --target $instance
+    aws ssm start-session --target $instance --profile $profile
   end
 end
