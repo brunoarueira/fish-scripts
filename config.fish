@@ -43,7 +43,6 @@ set android_emulator $ANDROID_HOME/emulator
 set android_platform_tools $ANDROID_HOME/platform-tools
 set android_tools $ANDROID_HOME/tools
 set fastlane $HOME/.fastlane/bin
-set NVM_DIR $HOME/.nvm
 set qt $HOME/Qt5.5.0/5.5/clang_64/bin
 set libpq /usr/local/opt/libpq/bin
 set -gx PATH $homebrew $qt $libpq $default_path $node_modules $rbenv_bin $rbenv_shims $android_emulator $android_tools $android_platform_tools $fastlane $cargo_env $cargo_bin $linuxbrew
@@ -84,9 +83,7 @@ set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
 source "$HOME/.config/fish/functions/aliases.fish"
 source "$HOME/.config/fish/functions/utils.fish"
 
-### NVM ###
-set -gx NVM_DIR /usr/local/opt/nvm
-
-bass source $NVM_DIR/nvm.sh --no-use
+# fnm
+fnm env | source
 
 stty echo
