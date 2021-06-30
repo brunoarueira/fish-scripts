@@ -4,7 +4,7 @@ end
 
 function __git_dirty_color
   set -x dirty_color (set_color green)
-  set -l is_git_dirty (command git status --porcelain --ignore-submodules ^/dev/null)
+  set -l is_git_dirty (command git status --porcelain --ignore-submodules)
 
   if test -n "$is_git_dirty"
     set -x dirty_color (set_color red)
@@ -14,8 +14,8 @@ function __git_dirty_color
 end
 
 function __parse_git_branch -d "Parse current Git branch name"
-  set -l branch (git symbolic-ref HEAD ^ /dev/null | sed -e 's|^refs/heads/||')
-  set -l revision (git rev-parse HEAD ^ /dev/null | cut -b 1-7)
+  set -l branch (git symbolic-ref HEAD | sed -e 's|^refs/heads/||')
+  set -l revision (git rev-parse HEAD | cut -b 1-7)
 
   if test (count $branch) -gt 0
     echo (__git_dirty_color) $branch
@@ -52,7 +52,7 @@ function __format_time -d "Format milliseconds to a human readable format" --arg
 end
 
 function __get_ruby_version
-  set -l ruby_version (ruby --version ^ /dev/null | cut -d' ' -f2)
+  set -l ruby_version (ruby --version | cut -d' ' -f2)
 
   if test (count $ruby_version) -gt 0
     echo $ruby_version
@@ -103,22 +103,23 @@ function fish_prompt
   end
 
   # Check if is on a Git repository
-  set -l is_git_repository (command git rev-parse --is-inside-work-tree ^/dev/null)
+  set is_git_repository (command git rev-parse --is-inside-work-tree >/dev/null 2>&1)
+  set is_git_repository_status $status
 
   set prompt $prompt "$color_purple$current_version$color_normal"
 
-  if test -n "$is_git_repository"
+  if test $is_git_repository_status -eq 0
     set git_branch_name (__parse_git_branch)
 
     # Check if there is an upstream configured
-    set -l has_upstream (command git rev-parse --abbrev-ref @'{u}' ^/dev/null)
+    set -l has_upstream (command git rev-parse --abbrev-ref @'{u}')
 
     if test -n "$has_upstream"
-      set -l git_status (command git rev-list --left-right --count HEAD...@'{u}' | sed 's/[[:blank:]]//' ^/dev/null)
+      set -l git_status (command git rev-list --left-right --count HEAD...@'{u}' | sed 's/[[:blank:]]/|/')
 
       # Resolve Git arrows by treating `git_status` as an array
-      set -l git_arrow_left (command echo $git_status | cut -c 1 ^/dev/null)
-      set -l git_arrow_right (command echo $git_status | cut -c 2 ^/dev/null)
+      set -l git_arrow_left (command echo $git_status | cut -f 1 -d "|")
+      set -l git_arrow_right (command echo $git_status | cut -f 2 -d "|")
 
       # If arrow is not "0", it means it's dirty
       if test $git_arrow_left -ne 0
