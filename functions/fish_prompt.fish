@@ -52,9 +52,9 @@ function __format_time -d "Format milliseconds to a human readable format" --arg
 end
 
 function __get_ruby_version
-  set -l ruby_version (ruby --version | cut -d' ' -f2)
+  set -l ruby_version (command ruby --version | cut -d' ' -f2)
 
-  if test (count $ruby_version) -gt 0
+  if test -n "$ruby_version"
     echo $ruby_version
   else
     echo "(ruby version not installed)"
@@ -106,7 +106,9 @@ function fish_prompt
   set is_git_repository (command git rev-parse --is-inside-work-tree >/dev/null 2>&1)
   set is_git_repository_status $status
 
-  set prompt $prompt "$color_purple$current_version$color_normal"
+  set current_ruby_version (__get_ruby_version)
+
+  set prompt $prompt "$color_purple$current_ruby_version$color_normal"
 
   if test $is_git_repository_status -eq 0
     set git_branch_name (__parse_git_branch)
