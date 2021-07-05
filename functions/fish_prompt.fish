@@ -114,9 +114,10 @@ function fish_prompt
     set git_branch_name (__parse_git_branch)
 
     # Check if there is an upstream configured
-    set -l has_upstream (command git rev-parse --abbrev-ref @'{u}')
+    set has_upstream (command git rev-parse --abbrev-ref @'{u}' 2>&1)
+    set has_upstream_exit_status $status
 
-    if test -n "$has_upstream"
+    if test $has_upstream_exit_status -eq 0
       set -l git_status (command git rev-list --left-right --count HEAD...@'{u}' | sed 's/[[:blank:]]/|/')
 
       # Resolve Git arrows by treating `git_status` as an array
