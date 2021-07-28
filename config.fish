@@ -47,7 +47,10 @@ set qt $HOME/Qt5.5.0/5.5/clang_64/bin
 set libpq /usr/local/opt/libpq/bin
 set gnubin /usr/local/opt/inetutils/libexec/gnubin
 set openssl /usr/local/opt/openssl@1.1/bin
-set -gx PATH $homebrew $qt $openssl $gnubin $libpq $default_path $node_modules $rbenv_bin $rbenv_shims $android_emulator $android_tools $android_platform_tools $fastlane $cargo_env $cargo_bin $linuxbrew
+# FIXME: The ghostscript bins below is temporary
+set ghostscript $HOME/Downloads/ghostscript-9.26/bin
+set llvm /usr/local/opt/llvm/bin
+set -gx PATH $ghostscript $llvm $homebrew $qt $openssl $gnubin $libpq $default_path $node_modules $rbenv_bin $rbenv_shims $android_emulator $android_tools $android_platform_tools $fastlane $cargo_env $cargo_bin $linuxbrew
 
 ### Ruby (rbenv) ###
 rbenv rehash >/dev/null 2>&1
