@@ -10,6 +10,6 @@ function klogs --argument-names namespace -d 'Access logs through kubectl from p
   set pod (__list_pods | fzf | awk '{print $1}')
 
   if test -n "$pod"
-    kubectl $namespace_command logs $pod
+    kubectl $namespace_command logs -f $pod
   end
 end
