@@ -29,3 +29,6 @@ alias dcr="docker-compose run"
 alias dcps="docker-compose ps"
 alias dcl="docker-compose logs"
 alias dcrt="docker-compose restart"
+
+# kubernetes
+alias kpods="kubectl get pods -n"
