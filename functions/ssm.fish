@@ -5,7 +5,7 @@ function ssm --argument-names profile -d 'Connect through aws ssm to instances o
 
   function __list_instances --inherit-variable profile
     aws ec2 describe-instances \
-      --filters Name=instance-state-name,Values=running --query 'Reservations[*].Instances[*].{Instance:InstanceId,LaunchTime:LaunchTime,Name:Tags[?Key==`Name`]|[0].Value}' \
+      --filters Name=instance-state-name,Values=running --query 'reverse(Reservations[*].Instances[*].[InstanceId,PrivateIpAddress,LaunchTime,Tags[?Key==`Name`]|[0].Value][] | sort_by(@, &[2]))' \
       --profile $profile \
       --output text
   end
