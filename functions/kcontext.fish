@@ -1,9 +1,5 @@
 function kcontext -d 'List contexts to switch after select it'
-  if ! test -n "$namespace"
-    set namespace "default"
-  end
-
-  function __list_contexts --inherit-variable namespace
+  function __list_contexts
     kubectl config get-contexts --no-headers
   end
 
