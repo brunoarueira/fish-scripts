@@ -32,3 +32,5 @@ alias dcrt="docker-compose restart"
 
 # kubernetes
 alias kpods="kubectl get pods -n"
+
+alias cat="bat"
