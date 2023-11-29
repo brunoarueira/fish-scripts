@@ -75,7 +75,6 @@ set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
 source "$HOME/.config/fish/functions/aliases.fish"
 source "$HOME/.config/fish/functions/utils.fish"
 
-# fnm
-fnm env | source
+source "$HOME/.config/fish/conf.d/fnm.fish"
 
 stty echo
