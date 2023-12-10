@@ -34,7 +34,7 @@ end
 ### PATH ###
 set cargo_env $HOME/.cargo/env
 set cargo_bin $HOME/.cargo/bin
-set homebrew /usr/local/bin /usr/local/sbin
+set homebrew /usr/local/bin /usr/local/sbin /opt/homebrew/bin
 set node_modules /usr/local/lib/node_modules
 set rbenv_bin $HOME/.rbenv/bin
 set rbenv_shims $HOME/.rbenv/shims
