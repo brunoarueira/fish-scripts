@@ -72,7 +72,7 @@ set -gx FZF_DEFAULT_OPTS $FZF_DEFAULT_OPTS '
 set -gx FZF_DEFAULT_COMMAND 'rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
 
-source "$HOME/.config/fish/functions/aliases.fish"
+source "$HOME/.config/fish/aliases.fish"
 source "$HOME/.config/fish/functions/utils.fish"
 
 source "$HOME/.config/fish/conf.d/fnm.fish"
