@@ -34,3 +34,10 @@ alias dcrt="docker-compose restart"
 alias kpods="kubectl get pods -n"
 
 # alias cat="bat"
+
+if type -q 'eza'
+  alias ls="eza --icons"
+  alias ll="ls -l --git --icons"
+  alias la="eza -a --icons"
+  alias lla="eza -la --git --icons"
+end
