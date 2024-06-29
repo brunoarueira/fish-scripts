@@ -84,8 +84,12 @@ source "$HOME/.config/fish/functions/utils.fish"
 set -gx YARN_GLOBAL_FOLDER $FNM_MULTISHELL_PATH/yarn-global
 set -gx YARN_PREFIX $FNM_MULTISHELL_PATH
 
-fnm env | source
+if type -q fnm
+  fnm env | source
+end
 
-direnv hook fish | source
+if type -q direnv
+  direnv hook fish | source
+end
 
 stty echo
