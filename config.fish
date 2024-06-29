@@ -51,7 +51,12 @@ set openssl /opt/homebrew/opt/openssl@1.1/bin
 # FIXME: The ghostscript bins below is temporary
 set ghostscript $HOME/Downloads/ghostscript-9.26/bin
 set llvm /opt/homebrew/opt/llvm/bin
-set -gx PATH $local_bin $ghostscript $llvm $homebrew $qt $openssl $gnubin $libpq $default_path $node_modules $rbenv_bin $rbenv_shims $android_emulator $android_tools $android_platform_tools $fastlane $cargo_env $cargo_bin $linuxbrew
+
+set -gx GOPATH $HOME/go
+
+set -gx GOBIN $GOPATH/bin
+
+set -gx PATH $local_bin $ghostscript $llvm $homebrew $qt $openssl $gnubin $libpq $default_path $node_modules $rbenv_bin $rbenv_shims $android_emulator $android_tools $android_platform_tools $fastlane $cargo_env $cargo_bin $GOPATH $GOBIN $linuxbrew
 
 ### Ruby (rbenv) ###
 rbenv rehash >/dev/null 2>&1
