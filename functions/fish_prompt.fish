@@ -69,13 +69,15 @@ function fish_prompt
   set -l symbol_git_down_arrow "⇣"
   set -l symbol_git_up_arrow "⇡"
 
-  # Colors
-  set -l color_blue (set_color blue)
-  set -l color_green (set_color green)
-  set -l color_normal (set_color normal)
-  set -l color_purple (set_color purple)
-  set -l color_red (set_color red)
-  set -l color_yellow (set_color yellow)
+  # Colors (Nordic Theme)
+  set -l color_blue (set_color 69A7BA)      # param
+  set -l color_green (set_color A3BE8C)    # quote
+  set -l color_normal (set_color 81A1C1)   # normal
+  set -l color_purple (set_color B48EAD)   # keyword
+  set -l color_red (set_color BF616A)      # error
+  set -l color_yellow (set_color EBCB8B)   # command
+  set -l color_cyan (set_color 93CCDC)     # escape
+  set -l color_gray (set_color D8DEE9)     # redirection
 
   # Template
   set -l current_folder (__parse_current_folder)
@@ -136,6 +138,11 @@ function fish_prompt
 
     # Format Git prompt output
     set prompt $prompt "$color_gray$git_branch_name$color_normal\t$color_cyan$git_arrows$color_normal"
+  end
+
+  # Use normal color for the prompt symbol if exit code was 0
+  if test $exit_code -eq 0
+    set color_symbol $color_normal
   end
 
   set prompt $prompt "\n$color_symbol$symbol_prompt$color_normal "
