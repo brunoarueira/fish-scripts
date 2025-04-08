@@ -92,4 +92,8 @@ if type -q direnv
   direnv hook fish | source
 end
 
+if status is-interactive
+  fish_config theme choose Nordic
+end
+
 stty echo
