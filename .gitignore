@@ -2,3 +2,4 @@ fish_history
 fishd.*
 generated_completions/
 secrets.fish
+fish_variables
