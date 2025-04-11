@@ -84,6 +84,11 @@ source "$HOME/.config/fish/functions/utils.fish"
 set -gx YARN_GLOBAL_FOLDER $FNM_MULTISHELL_PATH/yarn-global
 set -gx YARN_PREFIX $FNM_MULTISHELL_PATH
 
+# source local secrets if the file exists
+if test -f ~/.config/fish/secrets.fish
+    source "$HOME/.config/fish/secrets.fish"
+end
+
 if type -q fnm
   fnm env | source
 end
