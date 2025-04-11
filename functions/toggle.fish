@@ -1,4 +1,4 @@
-function toggle --argument-names process visibility -d 'Toggle the visibility of an application on OS X'
+function toggle --argument-names process visibility -d 'Toggle the visibility of an application on MacOS'
   osascript -e '
     on run args
       set appName to (item 1 of args)

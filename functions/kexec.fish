@@ -1,4 +1,4 @@
-function kexec --argument-names namespace -d 'Connect through kubectl to pods on the specified namespace'
+function kexec --argument-names namespace -d 'Access the terminal on pods at the specified namespace'
   if ! test -n "$namespace"
     set namespace "default"
   end
