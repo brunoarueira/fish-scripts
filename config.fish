@@ -6,11 +6,6 @@ set fish_greeting ""
 
 # Source non-conf.d configurations
 
-# Custom utility functions
-if test -f "$HOME/.config/fish/functions/utils.fish"
-    source "$HOME/.config/fish/functions/utils.fish"
-end
-
 # Source local secrets if the file exists
 if test -f "$HOME/.config/fish/secrets.fish"
     source "$HOME/.config/fish/secrets.fish"
