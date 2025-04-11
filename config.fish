@@ -5,10 +5,6 @@ stty -echo
 set fish_greeting ""
 
 # Source non-conf.d configurations
-# Aliases (consider moving to conf.d/aliases.fish later)
-if test -f "$HOME/.config/fish/aliases.fish"
-    source "$HOME/.config/fish/aliases.fish"
-end
 
 # Custom utility functions
 if test -f "$HOME/.config/fish/functions/utils.fish"
