@@ -50,7 +50,7 @@ git clone https://github.com/brunoarueira/fish-scripts ~/.config/fish
 
 | Name               | Arguments       | Description                                                      |
 | ------------------ | --------------- | ---------------------------------------------------------------- |
-| `-.fish`           |                 | `cd -`, return to the previous path                              |
+| `-`                |                 | `cd -`, return to the previous path                              |
 | `cleanup-asl-log`  |                 | Remove `*.asl` from `/private/var/log/asl/`                      |
 | `csv-show`         | `csv file path` | Show CSV file content on the console                             |
 | `export`           | `VAR=value`     | Like `export` in bash                                            |
