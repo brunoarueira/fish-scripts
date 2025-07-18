@@ -6,8 +6,6 @@ set cargo_env $HOME/.cargo/env
 set cargo_bin $HOME/.cargo/bin
 set homebrew /opt/homebrew/bin /opt/homebrew/sbin /opt/homebrew/bin
 set node_modules /usr/local/lib/node_modules
-set rbenv_bin $HOME/.rbenv/bin
-set rbenv_shims $HOME/.rbenv/shims
 set default_path /usr/bin /opt/homebrew/bin /usr/sbin /bin /sbin /usr/local/bin
 set android_emulator $ANDROID_HOME/emulator # Depends on ANDROID_HOME from 00_env_vars.fish
 set android_platform_tools $ANDROID_HOME/platform-tools # Depends on ANDROID_HOME
@@ -29,5 +27,5 @@ end
 
 # Set the final PATH, prepending our custom paths
 # Order matters: earlier entries have higher priority
-set -gx PATH $local_bin $ghostscript $llvm $homebrew $qt $openssl $gnubin $libpq $default_path $node_modules $rbenv_bin $rbenv_shims $android_emulator $android_tools $android_platform_tools $fastlane $cargo_env $cargo_bin $GOPATH $GOBIN $linuxbrew
+set -gx PATH $local_bin $ghostscript $llvm $homebrew $qt $openssl $gnubin $libpq $default_path $node_modules $android_emulator $android_tools $android_platform_tools $fastlane $cargo_env $cargo_bin $GOPATH $GOBIN $linuxbrew
 
