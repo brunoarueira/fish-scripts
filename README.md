@@ -61,7 +61,6 @@ git clone https://github.com/brunoarueira/fish-scripts ~/.config/fish
 | `last_modified`    | `[path]`        | Shows last modified files/dirs                                   |
 | `mk`               | `process_name`  | Monster kill a process                                           |
 | `psg`              | `process_name`  | List processes matching `process_name`                           |
-| `sdk`              | `[sdk_cmd]`     | sdkman                                                           |
 | `ssm`              | `[ssm_cmd]`     | Connect through aws ssm to instances on ec2                      |
 | `toggle`           | `app_name`      | Toggle the visibility of an application on MacOS                 |
 
