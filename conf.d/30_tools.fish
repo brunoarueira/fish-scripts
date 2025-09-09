@@ -1,4 +1,4 @@
-# Tool Configurations (FZF, Yarn, fnm, direnv)
+# Tool Configurations (FZF, direnv)
 
 # fzf - Fuzzy finder settings
 set -gx FZF_DEFAULT_OPTS $FZF_DEFAULT_OPTS '
@@ -8,15 +8,6 @@ set -gx FZF_DEFAULT_OPTS $FZF_DEFAULT_OPTS '
 '
 set -gx FZF_DEFAULT_COMMAND 'rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
-
-# Yarn global settings (related to fnm)
-set -gx YARN_GLOBAL_FOLDER $FNM_MULTISHELL_PATH/yarn-global
-set -gx YARN_PREFIX $FNM_MULTISHELL_PATH
-
-# fnm - Fast Node Manager
-if type -q fnm
-  fnm env | source
-end
 
 # direnv - Environment switcher
 if type -q direnv

@@ -14,7 +14,7 @@ The configuration is organized into the following main files and directories:
 *   **`conf.d/`**: Contains configuration snippets that are automatically sourced by Fish in alphabetical order. This is used for setting environment variables, modifying the PATH, initializing tools, and defining aliases.
     *   `00_env_vars.fish`: Sets up initial environment variables, potentially based on the operating system.
     *   `10_path.fish`: Modifies the `$PATH` variable to include custom binary locations.
-    *   `30_tools.fish`: Configures various command-line tools like `fzf`, `yarn`, `fnm`, `direnv`, etc.
+    *   `30_tools.fish`: Configures various command-line tools like `fzf`, `direnv`, etc.
     *   `40_aliases.fish` (Recommended location): Contains custom shell aliases.
 *   **`functions/`**: Holds custom Fish functions. Fish automatically loads `.fish` files in this directory when the corresponding function is called for the first time.
 *   **`themes/`**: Contains custom Fish themes. The active theme (`Nordic.theme` in this case) is usually selected in `config.fish`.
@@ -26,7 +26,6 @@ This configuration includes setup for:
 
 *   **Environment Variables:** Sensible defaults and OS-specific settings.
 *   **PATH Management:** Cleanly adds necessary directories to the execution path.
-*   **Node.js Environment:** `fnm` integration.
 *   **Developer Tools:** Configuration for `fzf` (fuzzy finder), `yarn` (package manager), `direnv` (directory-specific environments).
 *   **Custom Prompt:** Defined in `functions/fish_prompt.fish`.
 *   **Theme:** Uses the `Nordic` theme.
