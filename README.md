@@ -14,6 +14,7 @@ The configuration is organized into the following main files and directories:
 *   **`conf.d/`**: Contains configuration snippets that are automatically sourced by Fish in alphabetical order. This is used for setting environment variables, modifying the PATH, initializing tools, and defining aliases.
     *   `00_env_vars.fish`: Sets up initial environment variables, potentially based on the operating system.
     *   `10_path.fish`: Modifies the `$PATH` variable to include custom binary locations.
+    *   `20_mise.fish`: Active mise config for fish shell.
     *   `30_tools.fish`: Configures various command-line tools like `fzf`, `direnv`, etc.
     *   `40_aliases.fish` (Recommended location): Contains custom shell aliases.
 *   **`functions/`**: Holds custom Fish functions. Fish automatically loads `.fish` files in this directory when the corresponding function is called for the first time.
@@ -32,7 +33,7 @@ This configuration includes setup for:
 
 ## Customization
 
-*   **Aliases:** Add new aliases to `conf.d/aliases.fish`.
+*   **Aliases:** Add new aliases to `conf.d/40_aliases.fish`.
 *   **Functions:** Create new `.fish` files in the `functions/` directory, one file per function, named after the function (e.g., `my_function.fish` for `function my_function`).
 *   **Environment Variables:** Add new variables to `conf.d/00_env_vars.fish` or create a new file in `conf.d/` (e.g., `90_custom_vars.fish`).
 *   **Secrets:** Add sensitive data to `secrets.fish` (ensure this file is in your `.gitignore`).
@@ -47,7 +48,6 @@ git clone https://github.com/brunoarueira/fish-scripts ~/.config/fish
 
 | Name               | Arguments       | Description                                                      |
 | ------------------ | --------------- | ---------------------------------------------------------------- |
-| `-`                |                 | `cd -`, return to the previous path                              |
 | `cleanup-asl-log`  |                 | Remove `*.asl` from `/private/var/log/asl/`                      |
 | `csv-show`         | `csv file path` | Show CSV file content on the console                             |
 | `export`           | `VAR=value`     | Like `export` in bash                                            |
