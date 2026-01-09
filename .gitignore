@@ -3,3 +3,4 @@ fishd.*
 generated_completions/
 secrets.fish
 fish_variables
+completions/docker.fish
