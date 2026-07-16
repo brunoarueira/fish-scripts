@@ -4,7 +4,7 @@ end
 
 function __git_dirty_color
   set -x dirty_color (set_color green)
-  set -l is_git_dirty (command git status --porcelain --ignore-submodules)
+  set -l is_git_dirty (command git status --porcelain --ignore-submodules 2>/dev/null)
 
   if test -n "$is_git_dirty"
     set -x dirty_color (set_color red)
@@ -14,8 +14,8 @@ function __git_dirty_color
 end
 
 function __parse_git_branch -d "Parse current Git branch name"
-  set -l branch (git symbolic-ref HEAD | sed -e 's|^refs/heads/||')
-  set -l revision (git rev-parse HEAD | cut -b 1-7)
+  set -l branch (git symbolic-ref HEAD 2>/dev/null | sed -e 's|^refs/heads/||')
+  set -l revision (git rev-parse HEAD 2>/dev/null | cut -b 1-7)
 
   if test (count $branch) -gt 0
     echo (__git_dirty_color) $branch
@@ -120,7 +120,7 @@ function fish_prompt
     set has_upstream_exit_status $status
 
     if test $has_upstream_exit_status -eq 0
-      set -l git_status (command git rev-list --left-right --count HEAD...@'{u}' | sed 's/[[:blank:]]/|/')
+      set -l git_status (command git rev-list --left-right --count HEAD...@'{u}' 2>/dev/null | sed 's/[[:blank:]]/|/')
 
       # Resolve Git arrows by treating `git_status` as an array
       set -l git_arrow_left (command echo $git_status | cut -f 1 -d "|")
