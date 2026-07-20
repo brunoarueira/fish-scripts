@@ -36,10 +36,10 @@ alias kpods="kubectl get pods -n"
 # alias cat="bat"
 
 if type -q 'eza'
-  alias ls="eza --icons"
-  alias ll="ls -l --git --icons"
-  alias la="eza -a --icons"
-  alias lla="eza -la --git --icons"
+  alias ls="eza --icons=auto"
+  alias ll="ls -l --git --icons=auto"
+  alias la="eza -a --icons=auto"
+  alias lla="eza -la --git --icons=auto"
 end
 
 #################################
